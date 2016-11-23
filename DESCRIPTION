@@ -1,0 +1,21 @@
+Package: ggguitar
+Type: Package
+Title: Utilities for Creating Guitar Tablature
+Version: 0.1.0
+Authors@R: person("Casimir", "Saternos", email="cas.saternos@gmail.com", role = c('aut','cre'))
+Maintainer: <cas.saternos@gmail.com>
+Description: Utilities for Creating Guitar Tablature using tidyverse packages.
+License: What license is it under?
+LazyData: TRUE
+Imports:
+    dplyr,
+    ggplot2,
+    gridExtra,
+    readr,
+    tibble
+Suggests:
+    testthat,
+    knitr,
+    rmarkdown
+RoxygenNote: 5.0.1
+VignetteBuilder: knitr

@@ -1,0 +1,92 @@
+---
+title: "GGGuitar"
+author: "Casimir Saternos"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+This vignettes is a brief introduction to the ggguitar package.  The graphics are based on ggplot2 and processing on the tidyverse
+in general.  
+
+```{r}
+library(ggguitar)
+library(tibble)
+library(ggplot2)
+```
+
+Special thanks to Dr. Hadley Wickham and the crew at RStudio  whose work does all of the heavy lifting.
+
+## Examples of Tablature
+
+A chord in ggguitar is represented as a vector containing 6 elements.  Each element represents a string.  A numeric value
+represents the fret where a finger is placed.  Zero represents an open string, NA represents a string not played (either skipped or muted). 
+
+A G Major chord can be represented using the following vector.
+```{r}
+G_M <- c(3, 2, 0, 0, 0, 3)
+```
+
+The ggguitar method can be used to create the tablature for this chord.  The numbers in the vector represent fret positions with zeros indicating open strings.  By default the x and y axis are labeled as Strings and Frets along with associated numbers.
+```{r}
+ggguitar::tablature('G Major', G_M)
+```
+
+
+```{r}
+B_M <- c(NA, 2, 4, 4, 4, 2)
+C_M <- c(NA, 3, 2, 0, 1, 0)
+C_M_bar <- c(8, 10, 10, 9, 8, 8)
+D_M <- c(NA, NA, 0, 2, 3, 2)
+F_M7 <- c(NA, NA, 3, 2, 1, 0)
+e_m <- c(0, 2, 2, 0, 0, 0)
+a_m <- c(NA, 0, 2, 2, 1, 0)
+b_m <- c(NA, 2, 4, 4, 3, 2)
+```
+
+
+
+## Styles
+
+The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
+
+    output: 
+      rmarkdown::html_vignette:
+        css: mystyles.css
+
+## Figures
+
+The figure sizes have been customised so that you can easily put two images side-by-side. 
+
+```{r, fig.show='hold'}
+plot(1:10)
+plot(10:1)
+```
+
+You can enable figure captions by `fig_caption: yes` in YAML:
+
+    output:
+      rmarkdown::html_vignette:
+        fig_caption: yes
+
+Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
+
+## More Examples
+
+You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
+
+```{r, echo=FALSE, results='asis'}
+knitr::kable(head(mtcars, 10))
+```
+
+Also a quote using `>`:
+
+> "He who gives up [code] safety for [code] speed deserves neither."
+([via](https://twitter.com/hadleywickham/status/504368538874703872))
+
+```{r}
+sessionInfo()
+```
