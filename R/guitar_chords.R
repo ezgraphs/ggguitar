@@ -75,51 +75,51 @@ tablature <-
   }
 
   desc <- as.numeric(sub(-0.5, 0, (desc - 0.5))) # Position finger before the fret.
-  fret_positions <- tibble(strings, Fret = desc)
+  fret_positions <- tibble::tibble(strings, Fret = desc)
 
-  p <- ggplot(fret_positions, aes(x = strings,
-                                  y = Fret)) + geom_point()
+  p <- ggplot2::ggplot(fret_positions, ggplot2::aes(x = strings,
+                                  y = Fret)) + ggplot2::geom_point()
 
   if (!is.null(dot_labels)){
-     p <- ggplot(fret_positions,aes(x=strings,
+     p <- ggplot2::ggplot(fret_positions,ggplot2::aes(x=strings,
                                     y=Fret,
                                     label=c(dot_labels))) +
-       geom_label(size = 2)
+       ggplot2::geom_label(size = 2)
   }
 
   # Mark open strings
   p <- p  +
-   geom_point(aes(x = strings,
+    ggplot2::geom_point(ggplot2::aes(x = strings,
                   y = open_strings),
               colour = 'white', alpha = 0.5) +
-   theme(panel.grid.minor = element_blank()) +
-   coord_fixed(ratio = 1.2)
+    ggplot2::theme(panel.grid.minor = ggplot2::element_blank()) +
+    ggplot2::coord_fixed(ratio = 1.2)
 
 # Add X for not played / muted strings
-#  p <- p + geom_point(aes(x=not_played_x,
+#  p <- p + geom_point(ggplot2::aes(x=not_played_x,
 #                          y=not_played_y,
 #                          shape=4, size=10)) +
 #    scale_shape_identity()
 
   p <- p  +
-   scale_y_reverse(breaks = frets,
+    ggplot2::scale_y_reverse(breaks = frets,
                    labels = frets,
                    limits = c(max(frets), min_y)) +
-   scale_x_reverse(breaks = strings,
+    ggplot2::scale_x_reverse(breaks = strings,
                    labels = x_labels) +
-   ggtitle(name)
+    ggplot2::ggtitle(name)
 
   if (!include_text) {
-   p <- p + theme(axis.text = element_blank(), axis.ticks = element_blank())
+   p <- p + ggplot2::theme(axis.text = ggplot2::element_blank(), axis.ticks = ggplot2::element_blank())
   }
 
   if (include_title) {
-   p <- p + xlab(x_axis_label)
+   p <- p + ggplot2::xlab(x_axis_label)
   }else{
-   p <- p + theme(axis.title = element_blank())
+   p <- p + ggplot2::theme(axis.title = ggplot2::element_blank())
   }
 
-  p + theme(legend.position="none")
+  p + ggplot2::theme(legend.position="none")
 }
 
 
