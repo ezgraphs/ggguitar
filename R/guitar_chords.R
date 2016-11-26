@@ -71,8 +71,9 @@ tablature <-
   desc <- as.numeric(sub(-0.5, 0, (desc - 0.5))) # Position finger before the fret.
   fret_positions <- tibble::tibble(strings, Fret = desc)
 
-  p <- ggplot2::ggplot(fret_positions, ggplot2::aes(x = strings,
-                                  y = Fret)) + ggplot2::geom_point()
+  p <- ggplot2::ggplot(fret_positions,
+                       ggplot2::aes(x = strings,
+                                    y = Fret)) + ggplot2::geom_point()
 
   if (!is.null(dot_labels)){
      p <- ggplot2::ggplot(fret_positions,ggplot2::aes(x=strings,
