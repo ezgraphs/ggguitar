@@ -1,11 +1,5 @@
-library(ggplot2)
-library(gridExtra)
-library(dplyr)
-library(tibble)
-library(readr)
-
 # TODO - add a complete list of chords
-chords <- read_csv("data/chords.csv")
+chords <- readr::read_csv("data/chords.csv")
 #View(chords)
 # TODO - Perhaps expand to a database.  Also could include
 #      - Instruments (guitar, tuning)
@@ -201,7 +195,7 @@ notes_for_frets <- function(frets,
 narrow_chord <- function(chords, value, name){
  if (!is.null(value) && value !=''){
   filter_expr <- paste(name, '==', value)
-  chords <- filter_(chords, filter_expr)
+  chords <- dplyr::filter_(chords, filter_expr)
  }
  chords
 }

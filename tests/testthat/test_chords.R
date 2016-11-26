@@ -23,8 +23,8 @@ test_that("Major chord matches notes", {
 test_that("Selected chords are correct", {
 
   df <- select_chords('g', 'Major') %>%
-    transmute(chord_name=paste(note, chord)) %>%
-    distinct()
+    dplyr::transmute(chord_name=paste(note, chord)) %>%
+    dplyr::distinct()
   expect_equal(df$chord_name, 'g Major')
 })
 

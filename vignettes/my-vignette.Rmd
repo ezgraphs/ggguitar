@@ -16,6 +16,9 @@ in general.
 library(ggguitar)
 library(tibble)
 library(ggplot2)
+
+# Ignoring warnings
+options( warn = -1 )
 ```
 
 Special thanks to Dr. Hadley Wickham and the crew at RStudio  whose work does all of the heavy lifting.
@@ -34,58 +37,46 @@ The ggguitar method can be used to create the tablature for this chord.  The num
 ```{r}
 ggguitar::tablature('G Major', G_M)
 ```
-
+If a given string is not to be played, an NA is used rather than an integer representing the fret number.
 
 ```{r}
 B_M <- c(NA, 2, 4, 4, 4, 2)
+ggguitar::tablature('B Major', B_M)
+```
+
+Both open strings and ignored/muted strings can be included in the same chord.
+```{r}
 C_M <- c(NA, 3, 2, 0, 1, 0)
+ggguitar::tablature('C Major', C_M)
+```
+
+Chords need not be restricted to first position.  In the next example, a bar chord further up the neck is represented.
+```{r}
 C_M_bar <- c(8, 10, 10, 9, 8, 8)
+ggguitar::tablature('C Major (bar)', C_M_bar)
+```
+
+Charts can be assigned to variables and then displayed
+together using grid.arrange.
+```{r, fig.width=6}
 D_M <- c(NA, NA, 0, 2, 3, 2)
 F_M7 <- c(NA, NA, 3, 2, 1, 0)
 e_m <- c(0, 2, 2, 0, 0, 0)
 a_m <- c(NA, 0, 2, 2, 1, 0)
 b_m <- c(NA, 2, 4, 4, 3, 2)
+
+G_Major <- tablature('G Major', G_M)
+C_Major <- tablature('C Major', C_M, TRUE, FALSE)
+D_Major <- tablature('D Major', D_M, FALSE, FALSE)
+e_minor <- tablature('e minor', e_m)
+a_minor <- tablature('a minor', a_m, TRUE, FALSE)
+b_minor <- tablature('b minor', b_m)
+
+gridExtra::grid.arrange(G_Major, C_Major, D_Major,
+              a_minor, b_minor, e_minor,
+              ncol = 3)
 ```
 
-
-
-## Styles
-
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
-
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
-
-## Figures
-
-The figure sizes have been customised so that you can easily put two images side-by-side. 
-
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
-```
-
-You can enable figure captions by `fig_caption: yes` in YAML:
-
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
-
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
-
-## More Examples
-
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
-
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
-```
-
-Also a quote using `>`:
-
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
 
 ```{r}
 sessionInfo()

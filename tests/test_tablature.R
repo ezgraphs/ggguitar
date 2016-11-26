@@ -1,3 +1,8 @@
+# library(ggplot2)
+# library(dplyr)
+# library(tibble)
+# library(gridExtra)
+# library(readr)
 # # TODO Maybe make a vigenette based on the examples ???
 # G_M <- c(3, 2, 0, 0, 0, 3)
 #
