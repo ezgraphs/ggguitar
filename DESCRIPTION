@@ -3,9 +3,9 @@ Type: Package
 Title: Utilities for Creating Guitar Tablature
 Version: 0.1.0
 Authors@R: person("Casimir", "Saternos", email="cas.saternos@gmail.com", role = c('aut','cre'))
-Maintainer: <cas.saternos@gmail.com>
+Maintainer: Casimir Saternos <cas.saternos@gmail.com>
 Description: Utilities for Creating Guitar Tablature using tidyverse packages.
-License: MIT
+License: MIT + file LICENSE
 LazyData: TRUE
 BugReports: https://github.com/ezgraphs/ggguitar/issues
 Imports:

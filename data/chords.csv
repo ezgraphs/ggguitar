@@ -1,4 +1,4 @@
-"","note","chord","string_1_fret","string_2_fret","string_3_fret","string_4_fret","string_5_fret","string_6_fret","string_1_finger","string_2_finger","string_3_finger","string_4_finger","string_5_finger","string_6_finger"
+"X1","note","chord","string_1_fret","string_2_fret","string_3_fret","string_4_fret","string_5_fret","string_6_fret","string_1_finger","string_2_finger","string_3_finger","string_4_finger","string_5_finger","string_6_finger"
 "1","g","Major",        3, 2,0,0,0,3,   2,1,0,0,0,4
 "2","g","Major",        3, 2,0,0,3,3,   2,1,0,0,3,4
 "3","c","Major",       NA, 3,2,0,1,0,   0,3,2,0,1,0
