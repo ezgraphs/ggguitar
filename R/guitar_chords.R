@@ -227,7 +227,7 @@ select_chords <- function(
  string_6_fret = NULL
  ){
 
- chord <- chords
+ chord <- ggguitar::chords
  chord <- narrow_chord(chord, shQuote(chord_name), 'chord')
  chord <- narrow_chord(chord, shQuote(note_name), 'note')
  chord <- narrow_chord(chord, string_1_fret, 'string_1_fret')

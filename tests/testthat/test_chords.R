@@ -1,3 +1,5 @@
+library(dplyr)
+
 G_M <- c(3, 2, 0, 0, 0, 3)
 C_M <- c(NA, 3, 2, 0, 1, 0)
 D_M <- c(NA, NA, 0, 2, 3, 2)

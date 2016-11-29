@@ -1,3 +1,5 @@
+library(dplyr)
+
 context("Testing Scales")
 
 G_M_scale <- c(3, 0, 0, 0, NA, NA,
