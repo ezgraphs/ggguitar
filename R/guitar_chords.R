@@ -49,6 +49,13 @@ tablature <-
           dot_labels = NULL
           ) {
 
+  # The declaration of Fret is just used to overcome a
+  # CRAN check issue...
+  # tablature: no visible binding for global variable ‘Fret’
+  # Undefined global functions or variables:
+  #   Fret
+  Fret <- NULL
+
   # 6 strings, but we need to use rep to represent scales... mutliple
   # notes per string
   strings <- rep(seq(6,1,by=-1), length.out = length(desc))
