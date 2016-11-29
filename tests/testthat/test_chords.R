@@ -1,5 +1,3 @@
-library(dplyr)
-
 G_M <- c(3, 2, 0, 0, 0, 3)
 C_M <- c(NA, 3, 2, 0, 1, 0)
 D_M <- c(NA, NA, 0, 2, 3, 2)
@@ -33,8 +31,8 @@ test_that("Selected chords are correct", {
 test_that("Selected chords include third fret", {
   df <- select_chords('g', 'Major', string_5_fret = 3)
   expect_equal(paste(df$note, df$chord), 'g Major')
-  expect_equal(df$string_5_fret, 3)
+  expect_equal(df$string_5_fret, c(3))
 
   df <- select_chords(string_5_fret = 3)
-  expect_equal(unique(df$string_5_fret), 3)
+  expect_equal(unique(df$string_5_fret), c(3))
 })
