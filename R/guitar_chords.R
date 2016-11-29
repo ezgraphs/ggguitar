@@ -51,7 +51,7 @@ tablature <-
 
   # The declaration of Fret is just used to overcome a
   # CRAN check issue...
-  # tablature: no visible binding for global variable ‘Fret’
+  # tablature: no visible binding for global variable 'Fret'
   # Undefined global functions or variables:
   #   Fret
   Fret <- NULL
