@@ -1,3 +1,24 @@
+# chords <- readr::read_csv("data/chords.csv", col_types = readr::cols(
+#   X1 = readr::col_integer(),
+#   note = readr::col_character(),
+#   chord = readr::col_character(),
+#   string_1_fret = readr::col_integer(),
+#   string_2_fret = readr::col_integer(),
+#   string_3_fret = readr::col_integer(),
+#   string_4_fret = readr::col_integer(),
+#   string_5_fret = readr::col_integer(),
+#   string_6_fret = readr::col_integer(),
+#   string_1_finger = readr::col_integer(),
+#   string_2_finger = readr::col_integer(),
+#   string_3_finger = readr::col_integer(),
+#   string_4_finger = readr::col_integer(),
+#   string_5_finger = readr::col_integer(),
+#   string_6_finger = readr::col_integer()
+# ))
+#
+#----
+# save(chords, file='data/chords.RData')
+#----
 # library(ggplot2)
 # library(dplyr)
 # library(tibble)

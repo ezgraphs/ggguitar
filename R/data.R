@@ -1,9 +1,10 @@
-#' Prices of 50,000 round cut diamonds.
+#' A dataset containing chords.
 #'
-#' A dataset containing the prices and other attributes of almost 54,000
-#' diamonds.
+#' A dataset containing chords, their location
+#' on a guitar neck, and the standard fingering used
+#' to play them.
 #'
-#' @format A data frame with 53940 rows and 10 variables:
+#' @format A data frame chords:
 #' \describe{
 #'   \item{X1}{id field}
 #'   \item{note}{note that is the root of the chord}
