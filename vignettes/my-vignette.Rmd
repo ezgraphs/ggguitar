@@ -56,6 +56,7 @@ C_M_bar <- c(8, 10, 10, 9, 8, 8)
 ggguitar::tablature('C Major (bar)', C_M_bar)
 ```
 
+## Combining Tablature Images
 Charts can be assigned to variables and then displayed
 together using grid.arrange.
 ```{r, fig.width=6}
@@ -76,6 +77,19 @@ gridExtra::grid.arrange(G_Major, C_Major, D_Major,
               a_minor, b_minor, e_minor,
               ncol = 3)
 ```
+
+## Labeled Frets
+In place of dots on frets, labels can be assigned.  These can contain finger numbers, scale degrees or any other characters of interest.
+```{r}
+tablature("A7", c(5, NA, 5, 6, 5, NA), dot_labels=c("Root", NA, "7th", "3rd", "5th", NA))
+```
+
+The appearance of the labels varies depending on the size of the rendered image.  You can assign a size for these labels explicitly.
+
+```{r}
+tablature("A7", c(5, NA, 5, 6, 5, NA), dot_labels=c("R", NA, "7", "3", "5", NA), dot_label_size = 5)
+```
+
 
 
 ```{r}

@@ -5,7 +5,8 @@
 \title{Create guitar chord tablature chart.}
 \usage{
 tablature(name, desc, include_text = TRUE, include_title = TRUE,
-  x_labels = NULL, x_axis_label = "String", dot_labels = NULL)
+  x_labels = NULL, x_axis_label = "String", dot_labels = NULL,
+  dot_label_size = 2)
 }
 \arguments{
 \item{name}{The name of the chord}
@@ -23,6 +24,8 @@ should not be played.}
 \item{x_axis_label}{The x axis label.  Default is String.}
 
 \item{dot_labels}{Adds labels in place of dots on frets.}
+
+\item{dot_label_size}{Set the size of labels used in place of dots on frets.}
 }
 \description{
 Create guitar chord tablature chart.

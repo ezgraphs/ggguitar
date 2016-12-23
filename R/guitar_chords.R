@@ -27,6 +27,7 @@
 #' @param x_labels A vector containing x tick mark labels.  Default is string numbers.
 #' @param x_axis_label The x axis label.  Default is String.
 #' @param dot_labels Adds labels in place of dots on frets.
+#' @param dot_label_size Set the size of labels used in place of dots on frets.
 #'
 #' @examples
 #' tablature('G Major', c(3, 2, 0, 0, 0, 3))
@@ -46,7 +47,8 @@ tablature <-
           include_title = TRUE,
           x_labels=NULL,
           x_axis_label = 'String',
-          dot_labels = NULL
+          dot_labels = NULL,
+          dot_label_size = 2
           ) {
 
   # The declaration of Fret is just used to overcome a
@@ -86,7 +88,7 @@ tablature <-
      p <- ggplot2::ggplot(fret_positions,ggplot2::aes(x=strings,
                                     y=Fret,
                                     label=c(dot_labels))) +
-       ggplot2::geom_label(size = 2)
+       ggplot2::geom_label(size = dot_label_size)
   }
 
   # Mark open strings
