@@ -1,6 +1,6 @@
 # ggguitar
 
-[![](http://cranlogs.r-pkg.org/badges/ggguitar)](http://cran.rstudio.com/web/packages/ggguitar/index.html)
+[![](http://cranlogs.r-pkg.org/badges/ggguitar)](https://CRAN.R-project.org/package=ggguitar)
 
 ## Description
 Create Guitar Tablature and related documentation.  Powered by ggplot2 and the Tidyverse.
