@@ -2,6 +2,8 @@
 
 [![](http://cranlogs.r-pkg.org/badges/ggguitar)](https://CRAN.R-project.org/package=ggguitar)
 
+Latest release available from [CRAN](https://cran.r-project.org/web/packages/ggguitar/index.html).  
+
 ## Description
 Create Guitar Tablature and related documentation.  Powered by ggplot2 and the Tidyverse.
 
@@ -18,3 +20,5 @@ Create Guitar Tablature and related documentation.  Powered by ggplot2 and the T
 > chord_for_frets(chord_GM)
 [1] "g" "b" "d" "g" "b" "g"
 ```
+
+See the [Vignette](https://cran.r-project.org/web/packages/ggguitar/vignettes/my-vignette.html) for more examples.
